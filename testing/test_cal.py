@@ -3,13 +3,6 @@ from testpy.cal import  Calc
 import  yaml
 
 
-@pytest.fixture(scope="module")
-def fixture_setup():
-    print("\n**********测试初始化，创建calc对象***********\n")
-    calc = Calc()
-    yield calc
-    print("\n***********测试完成***********\n")
-
 #判断两个浮点数是否相等
 def compare_float(a, b, precision):
     if precision == 0:
@@ -26,6 +19,7 @@ def compare_float(a, b, precision):
 
 
 class TestCalc:
+
 
     @pytest.mark.parametrize('a,b,exp',
                              yaml.safe_load(open("data/add.yml")))

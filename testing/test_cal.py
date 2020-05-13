@@ -6,9 +6,9 @@ import  yaml
 
 #加载测试步骤yml文件
 def load_step():
-    with open("data/test_step.yml") as f:
-        steps = f.read()
-        print(steps)
+    with open("data/test_step.yml",'r') as f:
+        f.seek(0)
+        steps=yaml.safe_load(f)
         return steps
 
 
